@@ -2382,7 +2382,8 @@ class User < ActiveRecord::Base
   end
 
   def short_name_with_shared_contexts(user)
-    if (contexts = shared_contexts(user)).present?
+    if (contexts = shared_contexts(user)).present? && 1==2
+      # Disabled this at the request of RCOA
       "#{short_name} (#{contexts[0, 2].to_sentence})"
     else
       short_name
